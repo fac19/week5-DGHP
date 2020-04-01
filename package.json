@@ -23,5 +23,9 @@
     "nodemon": "^2.0.2",
     "tap-spec": "^5.0.0",
     "test": "^0.6.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.0.0"
   }
 }
