@@ -1,3 +1,3 @@
-const templates = require("../template");
+const templates = require("../templates");
 
 console.log(templates[5]);
