@@ -8,6 +8,13 @@ function sharedLayout(bodyContent) {
             <link rel="stylesheet" href="public/main.css">
             <title>Pink Punk</title>
         </head>
+        <header>
+          <h1>Pink Punk</h1>
+          <nav>
+          <p><a>Read posts</a></p>
+          <p><a>Submit a post</a></p>
+          </nav>
+        </header>
         <body>
             <div class="container">
                 ${bodyContent}
