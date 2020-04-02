@@ -18,10 +18,10 @@ function router(request, response) {
     console.log("submitpost");
     submitPostHandler(request, response);
   } 
-  // else if (url.includes("public")) {
-    // publicHandler(request, response);
-  // } 
-  else if (url === "/delete" && method === "DELETE") {
+  else if (url.includes("public")) {
+    publicHandler(request, response);
+  } 
+  else if (url === "/" && method === "DELETE") {
     deleteHandler(request, response);
   } else {
     missingHandler(request, response);
