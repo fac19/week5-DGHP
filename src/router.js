@@ -9,20 +9,20 @@ function router(request, response) {
   const url = request.url;
   const method = request.method;
 
-  if (url === "/") {
+  //console.log({url, method})
+  if (url === "/" && method === "DELETE") {
+    //console.log("delete stuff");
+    deleteHandler(request, response);
+  } else if (url === "/") {
     homeHandler(request, response);
   } else if (url === "/submit" && method === "GET") {
-    console.log("submitget");
+    //console.log("submitget");
     submitGetHandler(request, response);
   } else if (url === "/submit" && method === "POST") {
-    console.log("submitpost");
+    //console.log("submitpost");
     submitPostHandler(request, response);
-  } 
-  else if (url.includes("public")) {
+  } else if (url.includes("public")) {
     publicHandler(request, response);
-  } 
-  else if (url === "/" && method === "DELETE") {
-    deleteHandler(request, response);
   } else {
     missingHandler(request, response);
   }

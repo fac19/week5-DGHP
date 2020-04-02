@@ -3,10 +3,11 @@ const articles = document.querySelectorAll(`article`);
 articles.forEach(article => {
   article.addEventListener('click', (event)=>{
     if (event.target.tagName === "BUTTON") {
+        //console.log(article.dataset.index); 
       fetch('/', {
         method: 'delete',
         headers: {'content-type': 'application/json'},
-        body = article.dataset.index
+        body: article.dataset.index
       })
       .then(location.reload());
     }

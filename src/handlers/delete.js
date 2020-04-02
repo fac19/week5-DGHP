@@ -1,7 +1,12 @@
 const templates = require("../template");
 const model = require("../model");
-function deletePost(req) {
-  model.deletePost(req);
+
+function deleteHandler(req) {
+  let data = ""; 
+  req.on("data", chunk => data+=chunk);
+  req.on("end", ()=>{
+    model.deletePost(data);
+  }); 
 }
 
-module.exports = deletePost;
+module.exports = deleteHandler;
