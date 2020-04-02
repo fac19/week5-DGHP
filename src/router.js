@@ -12,12 +12,16 @@ function router(request, response) {
   if (url === "/") {
     homeHandler(request, response);
   } else if (url === "/submit" && method === "GET") {
+    console.log("submitget");
     submitGetHandler(request, response);
   } else if (url === "/submit" && method === "POST") {
+    console.log("submitpost");
     submitPostHandler(request, response);
-  } else if (url.includes("public")) {
-    publicHandler(request, response);
-  } else if (url === "/delete" && method === "DELETE") {
+  } 
+  // else if (url.includes("public")) {
+    // publicHandler(request, response);
+  // } 
+  else if (url === "/delete" && method === "DELETE") {
     deleteHandler(request, response);
   } else {
     missingHandler(request, response);
