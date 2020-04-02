@@ -1,4 +1,4 @@
-function submitPage(params) {
+function submitPage() {
   return sharedContent(
     `
     <form action="submit" method="POST">
