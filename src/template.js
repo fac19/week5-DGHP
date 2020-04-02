@@ -5,16 +5,16 @@ function sharedLayout(bodyContent) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="Pink Punk">
-            <link rel="stylesheet" href="public/main.css">
+            <link rel="stylesheet" href="./public/main.css">
             <title>Pink Punk</title>
         </head>
-        <header>
-          <h1>Pink Punk</h1>
-          <nav>
-          <p><a>Read posts</a></p>
-          <p><a>Submit a post</a></p>
-          </nav>
-        </header>
+            <header>
+              <h1 class="headerTitle">Pink Punk</h1>
+                <nav class="navbar">
+                  <a href="/" class="navbar__links">Read posts</a>
+                  <a href="/submit" class="navbar__links">Submit a post</a>
+                </nav>
+            </header>
         <body>
             <div class="container">
                 ${bodyContent}

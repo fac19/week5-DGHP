@@ -6,7 +6,7 @@ function getPosts() {
       `
         SELECT *
         FROM users
-        LEFT JOIN blog_posts ON users.id = blog_posts.author_id; `
+        INNER JOIN blog_posts ON users.id = blog_posts.author_id; `
     )
     .catch(err => {
       console.log("Here be error   ", err);
