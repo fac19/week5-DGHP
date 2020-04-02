@@ -13,7 +13,7 @@ function submitPage() {
 }
 
 function missingPage() {
-  `
+  return `
   <img class="missing-resource-image" href="https://media.giphy.com/media/VwoJkTfZAUBSU/giphy.gif" alt="404 resource not found">
   `;
 }
