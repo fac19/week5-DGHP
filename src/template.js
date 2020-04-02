@@ -49,7 +49,7 @@ function home(postObjArr) {
 }
 
 function submitPage() {
-  return sharedContent(
+  return sharedLayout(
     `
     <form action="submit" method="POST">
       <label for="username">Username</label>
