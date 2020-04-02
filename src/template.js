@@ -29,7 +29,7 @@ function makeArticle(obj) {
   return `    
   <section>
     <article class="post" data-index=${obj.id}>
-      <p class="post__author">By: ${obj.name}</p>
+      <p class="post__author">By: ${obj.username}</p>
       <p class="post__date">When: ${obj.post_date}</p>
       <p class="post__textContent">${obj.post}</p>
       <button
