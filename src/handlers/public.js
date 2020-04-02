@@ -1,5 +1,3 @@
-const templates = require("../template");
-
 const types = {
   css: "text/css",
   js: "application/javascript",
