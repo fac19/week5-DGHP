@@ -9,21 +9,22 @@ function sharedLayout(bodyContent) {
             <title>Pink Punk</title>
         </head>
         <body>
-            ${bodyContent}
+            <div class="container">
+                ${bodyContent}
+            </div>
         </body>
         <script src="public/main.js"></script>
     </html>
     `;
 }
 
-function home() {
-  return sharedLayout(`    
-  <div class="container">
+function makeArticle(obj) {
+  return `    
   <section>
-    <article class="post">
-      <p class="post__author">By: ${name}</p>
-      <p class="post__date">When: ${date}</p>
-      <p class="post__textContent">${textBox}</p>
+    <article class="post" data-index=${obj.id}>
+      <p class="post__author">By: ${obj.name}</p>
+      <p class="post__date">When: ${obj.post_date}</p>
+      <p class="post__textContent">${obj.post}</p>
       <button
         class="post__remove-button"
         aria-label="button to remove post"
@@ -32,6 +33,12 @@ function home() {
         Remove Post
       </button>
     </article>
-  </section>
-</div>`);
+  </section>`;
 }
+
+function home(postObjArr) {
+  let str = postObjArr.map(item => makeArticle(item)).join("\n");
+  return sharedLayout(str);
+}
+
+module.exports = { home };
