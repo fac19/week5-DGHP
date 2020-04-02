@@ -31,8 +31,12 @@ function newPost(message) {
     });
 }
 
-function deletePost(postId) {
-  db.query("DELETE FROM blog_posts WHERE ($1)=id", [postId]);
+function deletePost(postId, res) {
+  console.log(res.end);
+  db.query("DELETE FROM blog_posts WHERE ($1)=id", [postId])
+  .then(res.end)
+  .catch(console.err);
+ 
 }
 
 module.exports = { newPost, getPosts, deletePost };
