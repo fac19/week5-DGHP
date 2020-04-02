@@ -3,6 +3,6 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const db = new pg.Pool()
+const db = new pg.Pool({connectionString: process.env.DATABASE_URL})
 
 module.exports = db
