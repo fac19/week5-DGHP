@@ -1,8 +1,10 @@
 const templates = require("../template");
 const db = require("../db/connection.js");
+const model = require("../model.js");
 
 function homeHandler(request, response) {
-  db.query("SELECT * FROM blog_posts")
+  model
+    .getPosts()
     .then(result => result.rows)
     .then(posts => {
       response.end(templates.home(posts));
