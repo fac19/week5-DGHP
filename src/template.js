@@ -5,14 +5,17 @@ function sharedLayout(bodyContent) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="Pink Punk">
+            <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Lato:wght@300&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/794b746eef.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="./public/main.css">
             <title>Pink Punk</title>
         </head>
             <header>
-              <h1 class="headerTitle">Pink Punk</h1>
+              <h1 class="headerTitle glow">Pink Punk</h1>
                 <nav class="navbar">
-                  <a href="/" class="navbar__links">Read posts</a>
-                  <a href="/submit" class="navbar__links">Submit a post</a>
+                  <a href="/" class="navbar__links" aria-label="list of all posts">read</a>
+                  <a href="/submit" class="navbar__links" aria-label="write a new post">write</a>
                 </nav>
             </header>
         <body>
@@ -27,20 +30,23 @@ function sharedLayout(bodyContent) {
 
 function makeArticle(obj) {
   return `    
-  <section>
     <article class="post" data-index=${obj.id}>
-      <p class="post__author">By: ${obj.username}</p>
-      <p class="post__date">When: ${obj.post_date}</p>
+      <p class="post__author">${obj.username} wrote:</p>
       <p class="post__textContent">${obj.post}</p>
+      <p class="post__date">on: ${obj.post_date
+        .toString()
+        .split(" ")
+        .slice(0, 3)
+        .join(" ")}</p>
       <button
         class="post__remove-button"
         aria-label="button to remove post"
         type="button"
       >
-        Remove Post
+      <i class="fas fa-trash-alt"></i>
       </button>
     </article>
-  </section>`;
+`;
 }
 
 function home(postObjArr) {
@@ -51,11 +57,11 @@ function home(postObjArr) {
 function submitPage() {
   return sharedLayout(
     `
-    <form action="submit" method="POST">
-      <label for="username">Username</label>
+    <form class="form" action="submit" method="POST">
+      <label for="username">Author: </label>
       <input id="username" name="username" placeholder="who are you?" required>
       <label for="post_text">Write Post</label>
-      <textarea id="post_text" maxlength=500 name="post_text" aria-label="write blog here" placeholder="what are you thinking about?" required></textarea>
+      <textarea id="post_text" rows="10" cols="50" name="post_text" aria-label="write blog here" placeholder="what are you thinking about?" required></textarea>
       <button type="submit">Add Post</button>
     </form>
   `
