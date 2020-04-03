@@ -14,11 +14,11 @@ function publicHandler(request, response) {
   const urlArray = url.split(".");
   const extension = urlArray[1];
   const type = types[extension];
-  console.log(path.join(__dirname, "..", "..", url));
+  //console.log(path.join(__dirname, "..", "..", url));
   fs.readFile(path.join(__dirname, "..", "..", url), (error, file) => {
-    console.log("publicHandler -> file", file);
+   // console.log("publicHandler -> file", file);
     if (error) {
-      console.log(error);
+      //console.log(error);
       response.writeHead(404, { "content-type": "text/html" });
       response.end("<h1>File not found</h1>");
     } else {
