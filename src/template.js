@@ -62,7 +62,7 @@ function submitPage() {
       <input id="username" name="username" placeholder="who are you?" required>
       <label for="post_text">Write Post</label>
       <textarea id="post_text" rows="10" cols="50" name="post_text" aria-label="write blog here" placeholder="what are you thinking about?" required></textarea>
-      <button type="submit">Add Post</button>
+      <button class="form__button" type="submit">Add Post</button>
     </form>
   `
   );
@@ -70,7 +70,7 @@ function submitPage() {
 
 function missingPage() {
   return `
-  <img class="missing-resource-image" href="https://media.giphy.com/media/VwoJkTfZAUBSU/giphy.gif" alt="404 resource not found">
+  <img class="missing-resource-image" src="https://media.giphy.com/media/VwoJkTfZAUBSU/giphy.gif" alt="404 resource not found">
   `;
 }
 
