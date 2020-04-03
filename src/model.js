@@ -32,10 +32,13 @@ function newPost(message) {
 }
 
 function deletePost(postId, res) {
-  console.log(res.end);
   db.query("DELETE FROM blog_posts WHERE ($1)=id", [postId])
-  .then(res.end)
-  .catch(console.err);
+  .then(() => {
+    res.writeHead(302, {"location": "/"});
+    // res.writeHead(200);
+    res.end();
+  })
+  .catch(console.log);
  
 }
 
