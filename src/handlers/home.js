@@ -8,7 +8,8 @@ function homeHandler(request, response) {
     .then(result => result.rows)
     .then(posts => {
       response.end(templates.home(posts));
-    });
+    })
+    .catch(console.error);
 }
 
 module.exports = homeHandler;
