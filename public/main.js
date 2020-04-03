@@ -2,7 +2,7 @@ const articles = document.querySelectorAll(`article`);
 
 articles.forEach(article => {
   article.addEventListener('click', (event)=>{
-    if (event.target.tagName === "BUTTON") {
+    if (event.target.tagName === "BUTTON" || event.target.tagName === "I") {
         //console.log(article.dataset.index); 
       fetch('/', {
         method: 'delete',
