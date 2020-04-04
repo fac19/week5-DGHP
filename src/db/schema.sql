@@ -21,6 +21,17 @@ INSERT INTO blog_posts (author_id, post) VALUES
 (1, 'great stuff'),
 (2, 'very good stuff'),
 (3, 'we are gonna smash it'),
+(4, 'Wait, i am not ready'),
+(1, 'great stuff'),
+(2, 'very good stuff'),
+(3, 'we are gonna smash it'),
 (4, 'Wait, i am not ready');
-
+(1, 'great stuff'),
+(2, 'very good stuff'),
+(3, 'we are gonna smash it'),
+(4, 'Wait, i am not ready'),
+(1, 'great stuff'),
+(2, 'very good stuff'),
+(3, 'we are gonna smash it'),
+(4, 'Wait, i am not ready');
 COMMIT;

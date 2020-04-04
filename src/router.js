@@ -10,7 +10,7 @@ function router(request, response) {
   const method = request.method;
 
   //console.log({url, method})
-  if (url === "/" && method === "DELETE") {
+  if (url.includes("/delete-post")) {
     //console.log("delete stuff");
     deleteHandler(request, response);
   } else if (url === "/") {
